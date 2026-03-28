@@ -1,0 +1,373 @@
+/* 
+   ===============================================================
+   ARQUIVO DE ESTILOS - AGÊNCIA WEB PRO
+   ===============================================================
+   Este arquivo contém todo o design do site, organizado por seções.
+   Utiliza variáveis CSS para facilitar a alteração das cores globais.
+*/
+
+/* VARIÁVEIS DE CORES OFICIAIS */
+:root {
+    --azul-escuro: rgb(10, 17, 42);    /* Fundo principal */
+    --azul-medio: rgb(14, 41, 101);    /* Elementos secundários */
+    --azul-destaque: rgb(49, 172, 243); /* Botões e CTAs */
+    --azul-suave: rgb(53, 102, 168);   /* Detalhes e hover */
+    --branco-azulado: rgb(178, 216, 235); /* Textos claros */
+    --branco-puro: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--azul-escuro);
+    color: var(--branco-azulado);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* UTILITÁRIOS */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--azul-destaque);
+    color: var(--azul-escuro);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid var(--azul-destaque);
+}
+
+.btn:hover {
+    background-color: transparent;
+    color: var(--azul-destaque);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(49, 172, 243, 0.3);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--branco-puro);
+}
+
+.highlight {
+    color: var(--azul-destaque);
+}
+
+/* HEADER / NAVEGAÇÃO */
+header {
+    background-color: rgba(10, 17, 42, 0.95);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--azul-medio);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--branco-puro);
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--azul-destaque);
+}
+
+/* HERO SECTION */
+#hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-medio) 100%);
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: var(--branco-puro);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* SOBRE A EMPRESA */
+#about {
+    background-color: var(--azul-escuro);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text h2 {
+    margin-bottom: 20px;
+}
+
+/* CARDS DE SERVIÇOS E PLANOS */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: var(--azul-medio);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid var(--azul-suave);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--azul-destaque);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card.recommended {
+    border: 2px solid var(--azul-destaque);
+    transform: scale(1.05);
+}
+
+.card.recommended::before {
+    content: "RECOMENDADO";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--azul-destaque);
+    color: var(--azul-escuro);
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--branco-puro);
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--azul-destaque);
+    margin: 20px 0;
+}
+
+.price span {
+    font-size: 1rem;
+    color: var(--branco-azulado);
+}
+
+.card ul {
+    list-style: none;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.card ul li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.card ul li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--azul-destaque);
+    font-weight: bold;
+}
+
+/* DIFERENCIAIS */
+#differentials {
+    background-color: var(--azul-medio);
+}
+
+.diff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.diff-item i {
+    font-size: 2.5rem;
+    color: var(--azul-destaque);
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* CTA FINAL */
+#cta-final {
+    background: linear-gradient(rgba(10, 17, 42, 0.8), rgba(10, 17, 42, 0.8)), url('https://picsum.photos/seed/tech/1920/1080');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.cta-box {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-box h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.urgency {
+    display: block;
+    margin-top: 20px;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* RODAPÉ */
+footer {
+    background-color: rgb(5, 10, 25);
+    padding: 50px 0;
+    border-top: 1px solid var(--azul-medio);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-info h4 {
+    color: var(--branco-puro);
+    margin-bottom: 20px;
+}
+
+.footer-info p {
+    margin-bottom: 10px;
+}
+
+.copyright {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(178, 216, 235, 0.1);
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .card.recommended {
+        transform: scale(1);
+        margin: 20px 0;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* BOTÃO FLUTUANTE WHATSAPP */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+    color: #FFF;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
+    }
+}
