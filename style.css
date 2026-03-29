@@ -120,6 +120,29 @@ header .container {
     color: var(--azul-destaque);
 }
 
+/* BOTÃO INSTAGRAM HEADER */
+.btn-instagram-header {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background-color: transparent;
+    color: var(--azul-destaque);
+    border: 2px solid var(--azul-destaque);
+    border-radius: 50%;
+    transition: var(--transition);
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.btn-instagram-header:hover {
+    background-color: var(--azul-destaque);
+    color: var(--azul-escuro);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(49, 172, 243, 0.3);
+}
+
 /* HERO SECTION */
 #hero {
     height: 100vh;
@@ -388,6 +411,11 @@ footer {
 .footer-info img {
     width: 200px;
     height: auto;
+}
+
+.footer-info a {
+    color: inherit;
+    text-decoration: none;
 }
 
 /* RESPONSIVIDADE */
