@@ -1,6 +1,6 @@
 /* 
    ===============================================================
-   ARQUIVO DE ESTILOS - AGÊNCIA WEB PRO
+   ARQUIVO DE ESTILOS - ATLASWEBLAB
    ===============================================================
    Este arquivo contém todo o design do site, organizado por seções.
    Utiliza variáveis CSS para facilitar a alteração das cores globais.
@@ -98,11 +98,6 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo img {
-    height: 50px;
-    width: auto;
 }
 
 .logo img {
@@ -431,6 +426,10 @@ footer {
     text-decoration: none;
 }
 
+.btn-text-short {
+    display: none;
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 992px) {
     .hero-content h1 {
@@ -462,6 +461,12 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .btn-text-full {
+        display: none;
+    }
+    .btn-text-short {
+        display: inline;
+    }
     header {
         padding: 10px 0;
     }
